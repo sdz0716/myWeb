@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'serverinfo.apps.ServerinfoConfig'
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,17 @@ WSGI_APPLICATION = 'myWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': './my.cnf'
+        },
+        # 'NAME': 'salt',
+        # 'HOST': '192.168.10.61',
+        # 'USER': 'salt',
+        # 'PASSWORD': '111111',
+        # 'PORT': 3306,
     }
 }
 
