@@ -31,3 +31,6 @@ class salt_returns(models.Model):
 
     class Meta:
         db_table = 'salt_returns'
+
+    def __str__(self):
+        return '%s %s' %(self.id, self.jid)
