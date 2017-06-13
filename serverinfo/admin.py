@@ -1,7 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from serverinfo.models import serverList
 
-from .models import salt_returns
-
-admin.site.register(salt_returns)
+admin.site.register(serverList)

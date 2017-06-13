@@ -28,7 +28,10 @@ class UnixTimestampField(models.DateTimeField):
         return ' '.join(typ)
 
     def to_python(self, value):
-        return datetime.from_timestamp(value)
+        if isinstance(value, int):
+            return datetime.fromtimestamp(value)
+        else:
+            return models.DateTimeField.to_python(self, value)
 
     def get_db_prep_value(self, value, connection, prepared=False):
         if value == None:
