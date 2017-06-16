@@ -36,3 +36,7 @@ def index(request):
 def detail(request, ip):
     server = get_object_or_404(serverList, ip=ip)
     return render(request, 'serverinfo/detail.html', {'server': server})
+
+def serverlist(request):
+    serlst = serverList.objects.order_by('id')
+    return render(request, 'serverinfo/list.html', {'serlst': serlst})

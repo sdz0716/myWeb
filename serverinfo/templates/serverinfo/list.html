@@ -1,0 +1,63 @@
+{#{% load staticfiles %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <script src="/static/jquery-3.2.1.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+{#    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">#}
+{#    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>#}
+{#    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+</head>
+<body>
+<div class="container">
+    <h2>Table</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>实例</th>
+                <th>主机名</th>
+                <th>IP</th>
+                <th>宿主机</th>
+                <th>CPU</th>
+                <th>内存</th>
+                <th>系统</th>
+                <th>系统盘</th>
+                <th>数据盘</th>
+                <th>使用者</th>
+                <th>用途</th>
+                <th>备注</th>
+                <th>创建时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ser in serlst %}
+            <tr>
+                <td> {{ forloop.counter }} </td>
+                <td> {{ ser.instance }}</td>
+                <td> {{ ser.hostname }}</td>
+                <td> {{ ser.ip }}</td>
+                <td> {{ ser.hostcomputer }}</td>
+                <td> {{ ser.cpucore }}</td>
+                <td> {{ ser.memory }}</td>
+                <td> {{ ser.system }}</td>
+                <td> {{ ser.systemdisk }}</td>
+                <td> {{ ser.datadisk }}</td>
+                <td> {{ ser.user }}</td>
+                <td> {{ ser.use }}</td>
+                <td> {{ ser.remark }}</td>
+                <td> {{ ser.alter_time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script>
+
+</script>
+</body>
+</html>
