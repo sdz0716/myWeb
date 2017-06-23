@@ -18,3 +18,4 @@ class serverList(models.Model):
 
     def __str__(self):
         return u'%s' % self.ip
+

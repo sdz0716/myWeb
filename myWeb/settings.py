@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'serverinfo.apps.ServerinfoConfig'
+    'serverinfo.apps.ServerinfoConfig',
 ]
 
 MIDDLEWARE = [
@@ -83,9 +83,9 @@ DATABASES = {
         'OPTIONS': {
             'read_default_file': './my.cnf'
         },
-        # 'NAME': 'salt',
+        # 'NAME': 'opts',
         # 'HOST': '192.168.10.61',
-        # 'USER': 'salt',
+        # 'USER': 'opts',
         # 'PASSWORD': '111111',
         # 'PORT': 3306,
     }
@@ -137,3 +137,5 @@ STATICFILES_DIRS = [
     os.path.join(os.path.dirname(__file__), '..', "static").replace('\\', '/'),
     os.path.join('static'),
 ]
+
+# AUTH_USER_MODEL = 'serverinfo.models.serverList'

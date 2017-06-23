@@ -40,3 +40,4 @@ def detail(request, ip):
 def serverlist(request):
     serlst = serverList.objects.order_by('id')
     return render(request, 'serverinfo/list.html', {'serlst': serlst})
+
